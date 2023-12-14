@@ -7,7 +7,6 @@ from os import mkdir
 from random import randint
 from os.path import exists
 from datetime import datetime
-from email.message import EmailMessage
 from passlib.hash import sha256_crypt
 from flask import render_template, Blueprint
 from forms import (

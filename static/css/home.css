@@ -1,0 +1,62 @@
+*::-webkit-scrollbar {
+  width: 0.45rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #669180;
+}
+
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-button {
+  background: #064e3b;
+}
+
+.container {
+  position: relative;
+}
+
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #669180;
+}
+
+.blogContainer {
+  position: relative;
+  user-select: none;
+}
+
+.button2 {
+  color: white;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 0;
+  transition: 150ms;
+}
+
+::-moz-selection {
+  background: #669180;
+}
+
+::selection {
+  background: #669180;
+}

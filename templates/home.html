@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Jha</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.4/tailwind.min.css'>
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="theme-color" content="#064E3B" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+</head>
+
+<body>
+    <div class="flex items-center min-h-screen bg-green-900">
+        <div class="container mx-auto">
+            <div class="blogContainer mt-2"><a href="/login/redirect=&"
+                    class="p-2 button2 rounded hover:text-green-100 text-2xl">Blog</a></div>
+            <div class="text-center">
+                <h1 class="my-3 text-3xl font-semibold text-gray-100">
+                    Dr S K Jha<br>
+                    MBBS, MS<br>
+                    Consultant ENT and Head & Neck Surgery<br>
+                    <a href="https://api.whatsapp.com/send?phone=918335055714"><i class="fa fa-whatsapp"></i></a>
+                    +918335055714<br>
+                    Clinic: 32 Upendra Kishore Path, Durgapur<br><br>
+
+                    <hr><br>
+                    <section>
+                        <img class="mx-auto mb-10 rounded shadow-sm" src="/static/images/logo1.png"
+                            alt="Doctor Jha logo" style="width:300px;">
+                        <hr><br>
+                        <h1>Clinic</h1>
+                        <br>
+                        <p>
+                            Doctor Jha's clinic is equipped with state-of-the-art equipment for patient examination.
+                            Located conveniently, accessible by road, the clinic is operational for over ten
+                            years. The Doctor is available on appointment. Use information at
+                            top of this page, or message box given below.
+                        </p>
+                    </section>
+                    <br>
+                    <hr><br>
+            </div>
+            <div class="max-w-md mx-auto my-10 bg-green-900 p-5 rounded-md shadow-sm">
+                <div class="text-center">
+                    <h1 class="my-3 text-3xl font-semibold text-gray-100">
+                        Message
+                    </h1>
+                </div>
+                <div>
+                    <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                        <input type="hidden" name="access_key" value="97440970-b5a0-47e4-81e1-d313a32aa751" />
+                        <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+                        <input type="checkbox" name="botcheck" id="" style="display: none;" />
+
+                        <div class="mb-6">
+                            <input type="text" name="name" id="name" placeholder="name" required
+                                class="w-full px-3 py-2 h-12 rounded-sm placeholder-gray-500 text-gray-900 bg-gray-100 text-sm focus:outline-none" />
+                        </div>
+                        <div class="mb-6">
+                            <input type="text" name="phone" id="phone" placeholder="number" required
+                                class="w-full px-3 py-2 h-12 rounded-sm placeholder-gray-500 text-gray-900 bg-gray-100 text-sm focus:outline-none" />
+                        </div>
+                        <div class="mb-6">
+                            <textarea rows="5" name="message" id="message" placeholder="message"
+                                class="w-full px-3 py-2 rounded-sm placeholder-gray-500 text-gray-900 bg-gray-100 text-sm focus:outline-none"
+                                required></textarea>
+                        </div>
+                        <div class="mb-6">
+                            <button type="submit"
+                                class="w-full bg-green-900 inline-block text-white no-underline hover:text-green-100 py-4 px-4 rounded-sm focus:outline-none">
+                                <h1 class="my-3 text-3xl">
+                                    Send
+                                </h1>
+                            </button>
+                        </div>
+                        <p class="text-base text-center text-green-500" id="result"></p>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <hr><br>
+            <div class="text-center">
+                <h1 class="my-3 text-3xl font-semibold text-gray-100">
+                    Location
+                </h1>
+                <br>
+                <div class="mapouter rounded">
+                    <div class="gmap_canvas"><iframe
+                            src="https://maps.google.com/maps?q=32%20Upendra%20Kishore%20Path%20Durgapur%20&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                            frameborder="0" scrolling="no" style="width: 100%; height: 400px;"></iframe>
+                        <style>
+                            .mapouter {
+                                position: relative;
+                                height: 400px;
+                                width: 100%;
+                                background: #fff;
+                            }
+
+                            .maprouter a {
+                                color: #fff !important;
+                                position: absolute !important;
+                                top: 0 !important;
+                                z-index: 0 !important;
+                            }
+                        </style><a href="https://blooketjoin.org/blooket-login/">blooket login</a>
+                        <style>
+                            .gmap_canvas {
+                                overflow: hidden;
+                                height: 400px;
+                                width: 100%
+                            }
+
+                            .gmap_canvas iframe {
+                                position: relative;
+                                z-index: 2
+                            }
+                        </style>
+                    </div>
+                </div>
+                <br>
+                <hr><br>
+            </div>
+        </div>
+        <script src="/static/js/home.js"></script>
+</body>
+
+</html>

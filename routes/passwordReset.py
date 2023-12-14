@@ -82,16 +82,16 @@ def passwordReset(codeSent):
                 numberDB = cursor.fetchone()
                 match not userNameDB or not numberDB:
                     case False:
-                        verificationCode = str(randint(1000, 9999))
+                        passwordResetCode = str(randint(1000, 9999))
                         client = Client(account_sid, auth_token)
                         message = client.messages.create(
                             to=number,
                             from_="+13603835415",
-                            body=f"Your verifiaction code is: {verificationCode}",
+                            body=f"Your verifiaction code is: {passwordResetCode}",
                         )
                         messageDebugging(
                             "2",
-                            f'VERIFICATION CODE: "{verificationCode}" SENT TO {number}',
+                            f'VERIFICATION CODE: "{passwordResetCode}" SENT TO {number}',
                         )
                         flash("code sent", "success")
                         return redirect("/passwordreset/codesent=true")

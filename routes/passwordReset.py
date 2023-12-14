@@ -1,18 +1,17 @@
 from helpers import (
-    ssl,
     flash,
-    smtplib,
     randint,
     sqlite3,
     request,
     redirect,
     Blueprint,
-    EmailMessage,
     sha256_crypt,
     render_template,
     passwordResetForm,
     message as messageDebugging,
 )
+from twilio.rest import Client
+from tokens import account_sid, auth_token
 
 passwordResetBlueprint = Blueprint("passwordReset", __name__)
 
@@ -65,11 +64,11 @@ def passwordReset(codeSent):
                                 flash("passwords must match", "error")
                     case False:
                         flash("Wrong Code", "error")
-            return render_template("passwordReset.html", form=form, mailSent=True)
+            return render_template("passwordReset.html", form=form, numberSent=True)
         case "false":
             if request.method == "POST":
                 userName = request.form["userName"]
-                email = request.form["email"]
+                number = request.form["number"]
                 userName = userName.replace(" ", "")
                 connection = sqlite3.connect("db/users.db")
                 cursor = connection.cursor()
@@ -78,50 +77,25 @@ def passwordReset(codeSent):
                 )
                 userNameDB = cursor.fetchone()
                 cursor.execute(
-                    f'select * from users where lower(email) = "{email.lower()}"'
+                    f'select * from users where lower(number) = "{number.lower()}"'
                 )
-                emailDB = cursor.fetchone()
-                match not userNameDB or not emailDB:
+                numberDB = cursor.fetchone()
+                match not userNameDB or not numberDB:
                     case False:
-                        port = 587
-                        smtp_server = "smtp.gmail.com"
-                        context = ssl.create_default_context()
-                        server = smtplib.SMTP(smtp_server, port)
-                        server.ehlo()
-                        server.starttls(context=context)
-                        server.ehlo()
-                        server.login(
-                            "flaskblogdogukanurker@gmail.com", "lsooxsmnsfnhnixy"
+                        verificationCode = str(randint(1000, 9999))
+                        client = Client(account_sid, auth_token)
+                        message = client.messages.create(
+                            to=number,
+                            from_="+13603835415",
+                            body=f"Your verifiaction code is: {verificationCode}",
                         )
-                        passwordResetCode = str(randint(1000, 9999))
-                        message = EmailMessage()
-                        message.set_content(
-                            f"Hi {userName}👋,\nForgot your password😶‍🌫️? No problem👌.\nHere is your password reset code🔢:\n{passwordResetCode}"
-                        )
-                        message.add_alternative(
-                            f"""\
-                        <html>
-                            <body>
-                                <h2>Hi {userName}👋,</h2>
-                                <h3>Forgot your password😶‍🌫️? No problem👌.<br>Here is your password reset code🔢:</h3>
-                                <h1>{passwordResetCode}</h1>
-                                </body>
-                        </html>
-                        """,
-                            subtype="html",
-                        )
-                        message["Subject"] = "Forgot Password?😕"
-                        message["From"] = "flaskblogdogukanurker@gmail.com"
-                        message["To"] = email
-                        server.send_message(message)
-                        server.quit()
                         messageDebugging(
                             "2",
-                            f'PASSWORD RESET CODE: "{passwordResetCode}" SENT TO "{email}"',
+                            f'VERIFICATION CODE: "{verificationCode}" SENT TO {number}',
                         )
                         flash("code sent", "success")
                         return redirect("/passwordreset/codesent=true")
                     case True:
                         messageDebugging("1", f'USER: "{userName}" NOT FOUND')
                         flash("user not found", "error")
-            return render_template("passwordReset.html", form=form, mailSent=False)
+            return render_template("passwordReset.html", form=form, numberSent=False)

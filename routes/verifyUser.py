@@ -55,7 +55,7 @@ def verifyUser(codeSent):
                                     case False:
                                         flash("Wrong Code", "error")
                             return render_template(
-                                "verifyUser.html", form=form, mailSent=True
+                                "verifyUser.html", form=form, numberSent=True
                             )
                         case "false":
                             if request.method == "POST":
@@ -90,7 +90,7 @@ def verifyUser(codeSent):
                                         )
                                         flash("user not found", "error")
                             return render_template(
-                                "verifyUser.html", form=form, mailSent=False
+                                "verifyUser.html", form=form, numberSent=False
                             )
         case False:
             return redirect("/")

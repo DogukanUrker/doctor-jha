@@ -36,8 +36,8 @@ def signup():
                 cursor.execute("select userName from users")
                 users = str(cursor.fetchall())
                 cursor.execute("select number from users")
-                mails = str(cursor.fetchall())
-                if not userName in users and not number in mails:
+                numbers = str(cursor.fetchall())
+                if not userName in users and not number in numbers:
                     if passwordConfirm == password:
                         match userName.isascii():
                             case True:
@@ -70,13 +70,13 @@ def signup():
                     elif passwordConfirm != password:
                         message("1", " PASSWORDS MUST MATCH ")
                         flash("password must match", "error")
-                elif userName in users and number in mails:
+                elif userName in users and number in numbers:
                     message("1", f'"{userName}" & "{number}" IS UNAVAILABLE ')
                     flash("This username and number is unavailable.", "error")
-                elif not userName in users and number in mails:
+                elif not userName in users and number in numbers:
                     message("1", f'THIS number "{number}" IS UNAVAILABLE ')
                     flash("This number is unavailable.", "error")
-                elif userName in users and not number in mails:
+                elif userName in users and not number in numbers:
                     message("1", f'THIS USERNAME "{userName}" IS UNAVAILABLE ')
                     flash("This username is unavailable.", "error")
             return render_template("signup.html", form=form, hideSignUp=True)

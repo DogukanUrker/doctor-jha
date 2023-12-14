@@ -1,18 +1,17 @@
 from helpers import (
-    ssl,
     flash,
-    smtplib,
     randint,
     sqlite3,
     request,
     session,
     redirect,
     Blueprint,
-    EmailMessage,
     render_template,
     verifyUserForm,
     message as messageDebugging,
 )
+from twilio.rest import Client
+from tokens import account_sid, auth_token
 
 verifyUserBlueprint = Blueprint("verifyUser", __name__)
 
@@ -67,49 +66,21 @@ def verifyUser(codeSent):
                                 )
                                 userNameDB = cursor.fetchone()
                                 cursor.execute(
-                                    f'select email from users where lower(username) = "{userName.lower()}"'
+                                    f'select number from users where lower(username) = "{userName.lower()}"'
                                 )
-                                email = cursor.fetchone()
+                                number = cursor.fetchone()
                                 match not userNameDB:
                                     case False:
-                                        port = 587
-                                        smtp_server = "smtp.gmail.com"
-                                        context = ssl.create_default_context()
-                                        server = smtplib.SMTP(smtp_server, port)
-                                        server.ehlo()
-                                        server.starttls(context=context)
-                                        server.ehlo()
-                                        server.login(
-                                            "flaskblogdogukanurker@gmail.com",
-                                            "lsooxsmnsfnhnixy",
-                                        )
                                         verificationCode = str(randint(1000, 9999))
-                                        message = EmailMessage()
-                                        message.set_content(
-                                            f"Hi {userName}👋,\nHere is your account verification code🔢:\n{verificationCode}"
+                                        client = Client(account_sid, auth_token)
+                                        message = client.messages.create(
+                                            to=number,
+                                            from_="+13603835415",
+                                            body=f"Your verifiaction code is: {verificationCode}",
                                         )
-                                        message.add_alternative(
-                                            f"""\
-                                        <html>
-                                            <body>
-                                                <h2>Hi {userName}👋,</h2>
-                                                <h3>Here is your account verification code🔢:</h3>
-                                                <h1>{verificationCode}</h1>
-                                                </body>
-                                        </html>
-                                        """,
-                                            subtype="html",
-                                        )
-                                        message["Subject"] = "Verification Code🔢"
-                                        message[
-                                            "From"
-                                        ] = "flaskblogdogukanurker@gmail.com"
-                                        message["To"] = email
-                                        server.send_message(message)
-                                        server.quit()
                                         messageDebugging(
                                             "2",
-                                            f'VERIFICATION CODE: "{verificationCode}" SENT TO "{email}"',
+                                            f'VERIFICATION CODE: "{verificationCode}" SENT TO {number}',
                                         )
                                         flash("code sent", "success")
                                         return redirect("/verifyUser/codesent=true")

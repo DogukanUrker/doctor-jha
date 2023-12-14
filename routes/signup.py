@@ -27,7 +27,7 @@ def signup():
             form = signUpForm(request.form)
             if request.method == "POST":
                 userName = request.form["userName"]
-                email = request.form["email"]
+                number = request.form["number"]
                 password = request.form["password"]
                 passwordConfirm = request.form["passwordConfirm"]
                 userName = userName.replace(" ", "")
@@ -35,9 +35,9 @@ def signup():
                 cursor = connection.cursor()
                 cursor.execute("select userName from users")
                 users = str(cursor.fetchall())
-                cursor.execute("select email from users")
+                cursor.execute("select number from users")
                 mails = str(cursor.fetchall())
-                if not userName in users and not email in mails:
+                if not userName in users and not number in mails:
                     if passwordConfirm == password:
                         match userName.isascii():
                             case True:
@@ -46,8 +46,8 @@ def signup():
                                 cursor = connection.cursor()
                                 cursor.execute(
                                     f"""
-                                    insert into users(userName,email,password,profilePicture,role,points,creationDate,creationTime,isVerified) 
-                                    values("{userName}","{email}","{password}",
+                                    insert into users(userName,number,password,profilePicture,role,points,creationDate,creationTime,isVerified) 
+                                    values("{userName}","{number}","{password}",
                                     "https://api.dicebear.com/7.x/identicon/svg?seed={userName}&radius=10",
                                     "user",0,
                                     "{currentDate()}",
@@ -70,13 +70,13 @@ def signup():
                     elif passwordConfirm != password:
                         message("1", " PASSWORDS MUST MATCH ")
                         flash("password must match", "error")
-                elif userName in users and email in mails:
-                    message("1", f'"{userName}" & "{email}" IS UNAVAILABLE ')
-                    flash("This username and email is unavailable.", "error")
-                elif not userName in users and email in mails:
-                    message("1", f'THIS EMAIL "{email}" IS UNAVAILABLE ')
-                    flash("This email is unavailable.", "error")
-                elif userName in users and not email in mails:
+                elif userName in users and number in mails:
+                    message("1", f'"{userName}" & "{number}" IS UNAVAILABLE ')
+                    flash("This username and number is unavailable.", "error")
+                elif not userName in users and number in mails:
+                    message("1", f'THIS number "{number}" IS UNAVAILABLE ')
+                    flash("This number is unavailable.", "error")
+                elif userName in users and not number in mails:
                     message("1", f'THIS USERNAME "{userName}" IS UNAVAILABLE ')
                     flash("This username is unavailable.", "error")
             return render_template("signup.html", form=form, hideSignUp=True)

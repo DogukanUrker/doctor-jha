@@ -31,7 +31,7 @@ def usersTable():
         CREATE TABLE IF NOT EXISTS Users(
 	    "userID"	INTEGER NOT NULL UNIQUE,
 	    "userName"	TEXT UNIQUE,
-	    "email"	TEXT UNIQUE,
+	    "number"	TEXT UNIQUE,
 	    "password"	TEXT,
         "profilePicture" TEXT,
 	    "role"	TEXT,

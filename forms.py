@@ -43,10 +43,10 @@ class passwordResetForm(Form):
         [validators.Length(min=4, max=25), validators.InputRequired()],
         render_kw={"placeholder": "username"},
     )
-    email = StringField(
-        "Email",
+    number = StringField(
+        "Number",
         [validators.Length(min=6, max=50), validators.InputRequired()],
-        render_kw={"placeholder": "email"},
+        render_kw={"placeholder": "Phone Number"},
     )
     code = StringField(
         "code",
@@ -128,10 +128,10 @@ class signUpForm(Form):
         [validators.Length(min=4, max=25), validators.InputRequired()],
         render_kw={"placeholder": "username"},
     )
-    email = StringField(
-        "Email",
+    number = StringField(
+        "Number",
         [validators.Length(min=6, max=50), validators.InputRequired()],
-        render_kw={"placeholder": "email"},
+        render_kw={"placeholder": "Phone Number"},
     )
     password = PasswordField(
         "Password",

@@ -43,7 +43,7 @@
 .profileText {
   margin: 0;
   padding-left: 0;
-  color: var(--themeSecondary);
+  color: var(--themeHelper);
 }
 
 #searchInput {

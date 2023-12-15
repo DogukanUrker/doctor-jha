@@ -90,20 +90,13 @@ button {
   margin: 0rem 0.25rem;
 }
 
+.btnLink,
 .btnPrimary {
-  padding: 0.5rem 1rem 0.5rem 1rem;
   background-color: transparent;
 }
 
-.btnLink {
-  background-color: transparent;
-}
-
+.btnLink:hover,
 .btnPrimary:hover {
-  color: var(--themeHelper);
-}
-
-.btnLink:hover {
   color: var(--themeHelper);
 }
 

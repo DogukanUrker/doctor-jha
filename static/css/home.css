@@ -39,17 +39,8 @@
   background-color: #669180;
 }
 
-.blogContainer {
-  position: relative;
-  user-select: none;
-}
-
 .button2 {
   color: white;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  margin: 0;
   transition: 150ms;
 }
 

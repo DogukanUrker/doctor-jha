@@ -1,3 +1,7 @@
-http://46.28.44.26 {
+www.doctorjha.com {
+    redir https://doctorjha.com{url}
+}
+
+doctorjha.com {
     reverse_proxy localhost:8000
 }

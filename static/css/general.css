@@ -11,6 +11,8 @@
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: var(--themePrimary);
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
 }
 
 html {
@@ -78,7 +80,7 @@ button {
 .btn {
   height: fit-content;
   width: fit-content;
-  border-radius: 2rem;
+  border-radius: 0.25rem;
   border: 0px;
   transition: 0.25s;
   font-weight: 500;
@@ -90,8 +92,7 @@ button {
 
 .btnPrimary {
   padding: 0.5rem 1rem 0.5rem 1rem;
-  color: var(--themeSecondary);
-  background-color: var(--themePrimary);
+  background-color: transparent;
 }
 
 .btnLink {
@@ -99,7 +100,7 @@ button {
 }
 
 .btnPrimary:hover {
-  background-color: var(--themeHelper);
+  color: var(--themeHelper);
 }
 
 .btnLink:hover {

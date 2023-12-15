@@ -131,7 +131,7 @@ class signUpForm(Form):
     number = StringField(
         "Number",
         [validators.Length(min=6, max=50), validators.InputRequired()],
-        render_kw={"placeholder": "Phone Number"},
+        render_kw={"placeholder": "number with country code"},
     )
     password = PasswordField(
         "Password",

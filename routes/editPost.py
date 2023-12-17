@@ -39,11 +39,10 @@ def editPost(postID):
                         case True:
                             form = createPostForm(request.form)
                             form.postTitle.data = post[1]
-                            form.postTags.data = post[2]
                             form.postContent.data = post[3]
                             if request.method == "POST":
                                 postTitle = request.form["postTitle"]
-                                postTags = request.form["postTags"]
+                                postTags = ""
                                 postContent = request.form["postContent"]
                                 match postContent == "":
                                     case True:

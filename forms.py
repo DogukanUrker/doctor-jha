@@ -28,9 +28,6 @@ class createPostForm(Form):
         [validators.Length(min=4, max=75), validators.InputRequired()],
         render_kw={"placeholder": "post title"},
     )
-    postTags = StringField(
-        "Post Tags", [validators.InputRequired()], render_kw={"placeholder": "tags"}
-    )
     postContent = TextAreaField(
         "Post Content",
         [validators.Length(min=50)],

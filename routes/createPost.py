@@ -23,7 +23,7 @@ def createPost():
             form = createPostForm(request.form)
             if request.method == "POST":
                 postTitle = request.form["postTitle"]
-                postTags = request.form["postTags"]
+                postTags = ""
                 postContent = request.form["postContent"]
                 match postContent == "":
                     case True:

@@ -7,10 +7,7 @@
 {% endblock head %} {%block body%}
 <div class="post centeredHorizontally">
   <h1 class="title">{{title}}</h1>
-  <p class="content">
-    {{content|safe}} <br />
-    Tags: {{tags.replace(",",", ")}}
-  </p>
+  <p class="content">{{content|safe}} <br /></p>
   <div class="bottomBar">
     <div>
       <h5>👁️ {{views}}</h5>

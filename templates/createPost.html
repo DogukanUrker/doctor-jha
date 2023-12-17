@@ -6,8 +6,6 @@
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
     {{form.postTitle(class_="input centeredHorizontally" , autocomplete="off")}}
-    {{form.postTags(class_="input centeredHorizontally" , autocomplete="off")}}
-    <small>(separete with comma)</small>
     {{form.postContent(class_="editor", autocomplete="off")}}
     <button type="submit" class="btn btnPrimary">Post</button>
   </form>

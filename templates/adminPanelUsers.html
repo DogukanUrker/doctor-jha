@@ -42,11 +42,11 @@
       </form>
       {% if user[5] == "admin" %}
       <a href="/setuserrole/{{user[1].lower()}}/user" class="textPrimary"
-        >set user role to user</a
+        >set role to user</a
       >
       {% else %}
       <a href="/setuserrole/{{user[1].lower()}}/admin" class="textPrimary"
-        >set user role to admin</a
+        >set role to admin</a
       >
       {% endif %}
     </section>

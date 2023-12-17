@@ -32,7 +32,9 @@
         >dashboard</a
       >
       {% endif %} {% if user[5] == "admin" and session["userName"] == user[1] %}
-      <a href="/admin" class="btn btnLink textPrimary">admin panel</a>
+      <a href="/admin" class="btn btnLink textPrimary" id="btnAdminPanel"
+        >admin panel</a
+      >
       {% endif %}
     </section>
     {% if "userName" in session and session['userName'] == "{{user[1]}}"%}

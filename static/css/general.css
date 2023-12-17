@@ -119,8 +119,8 @@ button {
   text-align: center;
 }
 
-.goBackToAdmin {
-  position: absolute;
+#btnAdminPanel {
+  position: fixed;
   bottom: 0px;
   left: 0px;
 }

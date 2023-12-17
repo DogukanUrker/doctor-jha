@@ -6,7 +6,7 @@ from helpers import (
 homeBlueprint = Blueprint("home", __name__)
 
 
-@homeBlueprint.route("/home")
+@homeBlueprint.route("/")
 def home():
     return render_template(
         "home.html",

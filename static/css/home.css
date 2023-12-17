@@ -174,3 +174,7 @@ button {
     width: 100% !important;
   }
 }
+
+hr {
+  color: white !important;
+}

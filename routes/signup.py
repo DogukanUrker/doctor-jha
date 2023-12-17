@@ -25,7 +25,7 @@ def signup():
             match "userName" in session:
                 case True:
                     message("1", f'USER: "{session["userName"]}" ALREADY LOGGED IN')
-                    return redirect("/")
+                    return redirect("/blog")
                 case False:
                     form = signUpForm(request.form)
                     if request.method == "POST":
@@ -85,4 +85,4 @@ def signup():
                             flash("This username is unavailable.", "error")
                     return render_template("signup.html", form=form, hideSignUp=True)
         case False:
-            return redirect("/")
+            return redirect("/blog")

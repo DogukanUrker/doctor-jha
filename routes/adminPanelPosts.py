@@ -35,6 +35,6 @@ def adminPanelPosts():
                         "dashboard.html", posts=posts, showPosts=True
                     )
                 case False:
-                    return redirect("/")
+                    return redirect("/blog")
         case False:
-            return redirect("/")
+            return redirect("/blog")

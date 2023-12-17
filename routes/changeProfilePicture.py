@@ -35,4 +35,4 @@ def changeProfilePicture():
                 return redirect(f"/changeprofilepicture")
             return render_template("changeProfilePicture.html", form=form)
         case False:
-            return redirect("/")
+            return redirect("/blog")

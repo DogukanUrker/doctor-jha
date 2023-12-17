@@ -10,7 +10,7 @@ def logout():
         case True:
             message("2", f'USER: "{session["userName"]}" LOGGED OUT')
             session.clear()
-            return redirect("/")
+            return redirect("/blog")
         case False:
             message("1", f"USER NOT LOGGED IN")
-            return redirect("/")
+            return redirect("/blog")

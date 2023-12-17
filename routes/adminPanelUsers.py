@@ -36,6 +36,6 @@ def adminPanelUsers():
                         users=users,
                     )
                 case False:
-                    return redirect("/")
+                    return redirect("/blog")
         case False:
-            return redirect("/")
+            return redirect("/blog")

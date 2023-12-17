@@ -54,7 +54,7 @@ def createPost():
                         message("2", f'POST: "{postTitle}" POSTED')
                         addPoints(20, session["userName"])
                         flash("You earned 20 points by posting ", "success")
-                        return redirect("/")
+                        return redirect("/blog")
             return render_template("createPost.html", form=form)
         case False:
             message("1", "USER NOT LOGGED IN")

@@ -8,17 +8,13 @@ from helpers import (
 indexBlueprint = Blueprint("index", __name__)
 
 
-@indexBlueprint.route("/")
+@indexBlueprint.route("/blog")
 def index():
-    match "userName" in session:
-        case True:
-            connection = sqlite3.connect("db/posts.db")
-            cursor = connection.cursor()
-            cursor.execute("select * from posts")
-            posts = cursor.fetchall()
-            return render_template(
-                "index.html",
-                posts=posts,
-            )
-        case False:
-            return render_template("home.html")
+    connection = sqlite3.connect("db/posts.db")
+    cursor = connection.cursor()
+    cursor.execute("select * from posts")
+    posts = cursor.fetchall()
+    return render_template(
+        "index.html",
+        posts=posts,
+    )

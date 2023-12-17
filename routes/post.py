@@ -36,7 +36,7 @@ def post(postID):
             if request.method == "POST":
                 if "postDeleteButton" in request.form:
                     deletePost(postID)
-                    return redirect(f"/")
+                    return redirect("/blog")
                 elif "commentDeleteButton" in request.form:
                     deleteComment(request.form["commentID"])
                     return redirect(f"/post/{postID}")

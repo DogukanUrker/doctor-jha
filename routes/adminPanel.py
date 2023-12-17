@@ -17,6 +17,6 @@ def adminPanel():
                 case True:
                     return render_template("adminPanel.html")
                 case False:
-                    return redirect("/")
+                    return redirect("/blog")
         case False:
-            return redirect("/")
+            return redirect("/blog")

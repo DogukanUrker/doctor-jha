@@ -67,4 +67,4 @@ def changeUserName():
 
             return render_template("changeUserName.html", form=form)
         case False:
-            return redirect("/")
+            return redirect("/blog")

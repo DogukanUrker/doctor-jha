@@ -91,7 +91,7 @@ def editPost(postID):
                                 "1",
                                 f'THIS POST DOES NOT BELONG TO USER: "{session["userName"]}"',
                             )
-                            return redirect("/")
+                            return redirect("/blog")
                 case False:
                     message("1", f'POST: "{postID}" NOT FOUND')
                     return render_template("404.html")

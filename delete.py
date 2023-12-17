@@ -23,10 +23,10 @@ def deleteUser(userName):
     message("2", f'USER: "{userName}" DELETED')
     match perpetrator[0] == "admin":
         case True:
-            return redirect(f"/admin/users")
+            return redirect("/admin/users")
         case False:
             session.clear()
-            return redirect(f"/")
+            return redirect("/blog")
 
 
 def deleteComment(commentID):

@@ -29,7 +29,7 @@ def verifyUser(codeSent):
             isVerfied = cursor.fetchone()[0]
             match isVerfied:
                 case "True":
-                    return redirect("/")
+                    return redirect("/blog")
                 case "False":
                     global verificationCode
                     form = verifyUserForm(request.form)
@@ -51,7 +51,7 @@ def verifyUser(codeSent):
                                             "Your account has been verified.",
                                             "success",
                                         )
-                                        return redirect("/")
+                                        return redirect("/blog")
                                     case False:
                                         flash("Wrong Code", "error")
                             return render_template(
@@ -93,4 +93,4 @@ def verifyUser(codeSent):
                                 "verifyUser.html", form=form, numberSent=False
                             )
         case False:
-            return redirect("/")
+            return redirect("/blog")

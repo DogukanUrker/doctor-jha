@@ -34,6 +34,6 @@ def adminPanelComments():
                     comments = cursor.fetchall()
                     return render_template("adminPanelComments.html", comments=comments)
                 case False:
-                    return redirect("/")
+                    return redirect("/blog")
         case False:
-            return redirect("/")
+            return redirect("/blog")

@@ -1,5 +1,4 @@
 from helpers import (
-    sqlite3,
     render_template,
     Blueprint,
 )

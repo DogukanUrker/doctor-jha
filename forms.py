@@ -26,7 +26,7 @@ class createPostForm(Form):
     postTitle = StringField(
         "Post Title",
         [validators.Length(min=4, max=75), validators.InputRequired()],
-        render_kw={"placeholder": "post title"},
+        render_kw={"placeholder": "title"},
     )
     postContent = TextAreaField(
         "Post Content",
@@ -107,7 +107,7 @@ class changeUserNameForm(Form):
     newUserName = StringField(
         "Username",
         [validators.Length(min=4, max=25), validators.InputRequired()],
-        render_kw={"placeholder": "new name"},
+        render_kw={"placeholder": "name"},
     )
 
 

@@ -115,7 +115,7 @@ class changeProfilePictureForm(Form):
     newProfilePictureSeed = StringField(
         "ProfilePictureSeed",
         [validators.InputRequired()],
-        render_kw={"placeholder": "Enter seed for profile picture"},
+        render_kw={"placeholder": "enter any text"},
     )
 
 

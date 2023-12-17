@@ -13,10 +13,22 @@
       placeholder=""
     /><button onclick="search()" class="btn">🔍</button>
   </div>
+  {% if isHome %}
+  <style>
+    .navbar {
+      justify-content: space-;
+      width: 90%;
+    }
+    .searchBar,
+    .searchBarPage {
+      display: block;
+    }
+  </style>
+  {% else %}
   <div class="btns">
     {% if session["userName"] %}
     <a href="/createpost">
-      <button class="btn btnLink">new post</button>
+      <button class="btn btnLink">✏️</button>
     </a>
     <a href="/user/{{session['userName'].lower()}}">
       <div class="btn btnPrimary user">
@@ -24,10 +36,9 @@
           class="profilePicture"
           src="{{ getProfilePicture(session['userName']) }}"
         />
-        <button class="btn profileText">{{session["userName"]}}</button>
       </div>
     </a>
-    <a href="/logout" title="logout">❌</a>
+    <a href="/logout" title="logout">🚪</a>
     {% elif hideLogin %}
     <a href="/signup"><button class="btn btnLink">sign up</button></a>{% elif
     hideSignUp %}
@@ -50,7 +61,7 @@
           {{session["userName"]}}
         </div>
       </a>
-      <a href="/logout" title="logout">logout</a>
+      <a href="/logout" title="logout">🚪</a>
       {% elif hideLogin %}
       <a href="/signup">sign up</a>
       {% elif hideSignUp %}
@@ -59,8 +70,9 @@
       <a href="/login/redirect=&">login</a>
       <a href="/signup">sign up</a>
       {% endif %}
-      <a href="/searchbar">search</a>
+      <a href="/searchbar">🔍</a>
     </div>
   </div>
+  {% endif %}
   <script src="/static/js/navbar.js"></script>
 </div>

@@ -13,7 +13,7 @@ class loginForm(Form):
     userName = StringField(
         "Username",
         [validators.Length(min=4, max=25), validators.InputRequired()],
-        render_kw={"placeholder": "username"},
+        render_kw={"placeholder": "name"},
     )
     password = PasswordField(
         "Password",
@@ -38,7 +38,7 @@ class passwordResetForm(Form):
     userName = StringField(
         "Username",
         [validators.Length(min=4, max=25), validators.InputRequired()],
-        render_kw={"placeholder": "username"},
+        render_kw={"placeholder": "name"},
     )
     number = StringField(
         "Number",
@@ -107,7 +107,7 @@ class changeUserNameForm(Form):
     newUserName = StringField(
         "Username",
         [validators.Length(min=4, max=25), validators.InputRequired()],
-        render_kw={"placeholder": "new username"},
+        render_kw={"placeholder": "new name"},
     )
 
 
@@ -123,7 +123,7 @@ class signUpForm(Form):
     userName = StringField(
         "Username",
         [validators.Length(min=4, max=25), validators.InputRequired()],
-        render_kw={"placeholder": "username"},
+        render_kw={"placeholder": "name"},
     )
     number = StringField(
         "Number",

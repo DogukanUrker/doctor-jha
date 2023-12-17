@@ -28,7 +28,7 @@
       <a href="/accountsettings" class="btn btnLink textPrimary">⚙️</a>
       <a href="/dashboard/{{user[1]}}" class="btn btnLink textPrimary">📋</a>
       {% endif %} {% if user[5] == "admin" and session["userName"] == user[1] %}
-      <a href="/admin" class="btn btnLink textPrimary">🖥️</a>
+      <a href="/admin" class="btn btnLink textPrimary">👑</a>
       {% endif %}
     </section>
     {% if "userName" in session and session['userName'] == "{{user[1]}}"%}

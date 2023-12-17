@@ -18,7 +18,7 @@ class loginForm(Form):
     password = PasswordField(
         "Password",
         [validators.Length(min=5), validators.InputRequired()],
-        render_kw={"placeholder": "password"},
+        render_kw={"placeholder": "code"},
     )
 
 

@@ -1,9 +1,5 @@
 {% extends 'layout.html'%} {%block head%} {% if request.path == "/admin/posts"
-%}
-<title>Admin Panel --> Posts</title>
-{% else %}
-<title>{{session["userName"]}}'s Dashboard</title>
-{% endif %}
+%} {% else %} {% endif %}
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/index.css') }}"

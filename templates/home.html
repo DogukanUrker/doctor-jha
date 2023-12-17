@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Doctor Jha</title>
@@ -9,12 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="theme-color" content="#064E3B" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+    <link rel="stylesheet" href="/static/css/navbar.css">
 </head>
-
 <body>
     <div class="flex items-center min-h-screen bg-green-900">
         <div class="container mx-auto">
-            <div class="text-center">
+            <div class="text-center">  
+                <div class="text-white">
+                    {% include 'navbar.html'%}
+                </div>
                 <h1 class="my-3 text-3xl font-semibold text-gray-100">
                     <div class="mb-4">
                         Doctor Jha

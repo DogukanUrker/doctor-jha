@@ -1,6 +1,4 @@
-{% extends 'layout.html'%} {%block head%}
-<title>Create Post</title>
-{% endblock head %} {%block body%}
+{% extends 'layout.html'%} {%block head%} {% endblock head %} {%block body%}
 <div class="container">
   <form method="post" class="form formPost centeredHorizontally">
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />

@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="/static/css/navbar.css">
 </head>
 <body>
-    <div class="flex items-center min-h-screen bg-green-900">
+    {% include 'changeTheme.html'%}
+    <div class="flex items-center min-h-screen">
         <div class="container mx-auto">
             <div class="text-center">  
                 <div class="text-white">
@@ -37,7 +38,7 @@
                     <br>
                     <hr><br>
             </div>
-            <div class="max-w-md mx-auto my-10 bg-green-900 p-5 rounded-md shadow-sm">
+            <div class="max-w-md mx-auto my-10 p-5 rounded-md shadow-sm">
                 <div class="text-center">
                     <h1 class="my-3 text-3xl font-semibold text-gray-100">
                         Message
@@ -64,7 +65,7 @@
                         </div>
                         <div class="mb-6">
                             <button type="submit"
-                                class="w-full bg-green-900 inline-block text-white no-underline hover:text-green-100 py-4 px-4 rounded-sm focus:outline-none">
+                                class="w-full inline-block text-white no-underline hover:text-green-100 py-4 px-4 rounded-sm focus:outline-none">
                                 <h1 class="my-3 text-3xl">
                                     Send
                                 </h1>

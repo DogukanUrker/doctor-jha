@@ -105,6 +105,12 @@ small {
   text-align: right;
 }
 
+#btnComment {
+  color: white;
+  background-color: transparent;
+  width: fit-content;
+}
+
 @media screen and (max-width: 600px) {
   .comments,
   .comments small {

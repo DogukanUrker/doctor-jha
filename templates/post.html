@@ -60,7 +60,7 @@
   <form method="post" class="commentForm">
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
     {% if session["userName"] %} {{form.comment(class_="comment")}}
-    <button type="submit" class="btnSubmit">comment</button>
+    <button type="submit" class="btnSubmit" id="btnComment">comment</button>
     {% else %}
     <style>
       .commentForm {

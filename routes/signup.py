@@ -29,7 +29,6 @@ def signup():
                 userName = request.form["userName"]
                 number = request.form["number"]
                 password = request.form["password"]
-                passwordConfirm = request.form["passwordConfirm"]
                 userName = userName.replace(" ", "")
                 connection = sqlite3.connect("db/users.db")
                 cursor = connection.cursor()
@@ -38,7 +37,7 @@ def signup():
                 cursor.execute("select number from users")
                 numbers = str(cursor.fetchall())
                 if not userName in users and not number in numbers:
-                    if passwordConfirm == password:
+                    if password:
                         match userName.isascii():
                             case True:
                                 password = sha256_crypt.hash(password)
@@ -67,9 +66,6 @@ def signup():
                                     f'USERNAME: "{userName}" DOES NOT FITS ASCII CHARACTERS',
                                 )
                                 flash("username does not fit ascii charecters", "error")
-                    elif passwordConfirm != password:
-                        message("1", " PASSWORDS MUST MATCH ")
-                        flash("password must match", "error")
                 elif userName in users and number in numbers:
                     message("1", f'"{userName}" & "{number}" IS UNAVAILABLE ')
                     flash("This username and number is unavailable.", "error")

@@ -141,11 +141,3 @@ class signUpForm(Form):
         ],
         render_kw={"placeholder": "password"},
     )
-    passwordConfirm = PasswordField(
-        "passwordConfirm",
-        [
-            validators.Length(min=8),
-            validators.InputRequired(),
-        ],
-        render_kw={"placeholder": "confirm your password"},
-    )

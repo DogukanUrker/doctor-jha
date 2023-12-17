@@ -33,20 +33,20 @@
     </form>
   </section>
   <div class="info">
-    <p>Tags: {{post[2]}}</p>
-    <p>Views: {{post[7]}}</p>
+    <p>tags: {{post[2]}}</p>
+    <p>views: {{post[7]}}</p>
   </div>
   <div class="info">
-    <p>Creation Time: {{post[6]}}</p>
-    <p>Last Edit Time: {{post[9]}}</p>
+    <p>creation time: {{post[6]}}</p>
+    <p>last edit time: {{post[9]}}</p>
   </div>
   <div class="info">
-    <p>Creation Date: {{post[5]}}</p>
-    <p>Last Edit Date: {{post[8]}}</p>
+    <p>creation date: {{post[5]}}</p>
+    <p>last edit date: {{post[8]}}</p>
   </div>
   {% if request.path == "/admin/posts" %}
   <p>
-    Author:
+    author:
     <a href="/user/{{post[4].lower()}}" class="textPrimary">{{post[4]}}</a>
   </p>
   {% endif %}

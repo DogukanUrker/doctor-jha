@@ -3,7 +3,7 @@
   href="{{ url_for('static', filename='css/navbar.css') }}"
 />
 <div class="navbar">
-  <a href="/"><p class="btn btnLink btnHome">🥭</p></a>
+  <a href="/" class="homepageurl"><p class="btn btnLink btnHome">🥭</p></a>
   <div class="searchBar">
     <input
       type="text"
@@ -14,14 +14,17 @@
     /><button onclick="search()" class="btn">🔍</button>
   </div>
   {% if isHome %}
+  <a href="/login/redirect=&"><p class="btn btnLink btnHome">🥭</p></a>
   <style>
     .navbar {
-      justify-content: space-;
-      width: 90%;
+      justify-content: space-around;
+      width: 50%;
     }
+    .btns,
+    .homepageurl,
     .searchBar,
     .searchBarPage {
-      display: block;
+      display: none;
     }
   </style>
   {% else %}

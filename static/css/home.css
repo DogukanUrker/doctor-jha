@@ -11,7 +11,9 @@
 *::-webkit-scrollbar-button {
   background: #064e3b;
 }
-
+html {
+  font-size: 125% !important;
+}
 .container {
   position: relative;
 }
@@ -65,7 +67,6 @@
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: var(--themePrimary);
-  font-size: 1.25rem !important;
   font-weight: 400 !important;
 }
 
@@ -173,8 +174,4 @@ button {
   .navbar * {
     width: 100% !important;
   }
-}
-
-hr {
-  color: white !important;
 }

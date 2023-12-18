@@ -4,6 +4,7 @@
   href="{{ url_for('static', filename='css/post.css') }}"
 />
 {% endblock head %} {%block body%}
+<hr />
 <div class="post centeredHorizontally">
   <h1 class="title">{{title}}</h1>
   <p class="content">{{content|safe}} <br /></p>
@@ -38,7 +39,9 @@
 
     <a href="/editpost/{{id}}" class="btn btnLink textPrimary">🎛️</a>
   </div>
+
   {% endif %} {% for comment in comments %}
+  <hr />
   <div class="comments">
     <img class="profilePicture" src="{{ getProfilePicture(comment[3]) }}" />
     <section class="commentUserNameContainer">

@@ -42,7 +42,6 @@ def login(direct):
                         session["userName"] = user[1]
                         addPoints(1, session["userName"])
                         message("2", f'USER: "{user[1]}" LOGGED IN')
-                        flash(f"Welcome {user[1]}", "success")
                         return redirect("/blog")
                     else:
                         message("1", "WRONG PASSWORD")

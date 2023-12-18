@@ -15,7 +15,7 @@
   <a class="title textPrimary" href="/post/{{post[0]}} ">{{post[1]}}</a>
   <div class="content" tag="content">{{post[3]|safe}}</div>
   <section>
-    <a href="/editpost/{{post[0]}}" class="btn btnLink textPrimary">edit</a>
+    <a href="/editpost/{{post[0]}}" class="btn btnLink textPrimary">🎛️</a>
     <form method="post">
       <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
       <input type="hidden" name="postID" value="{{post[0]}}" />
@@ -24,25 +24,24 @@
         name="postDeleteButton"
         class="btn btnLink textPrimary"
       >
-        delete
+        💣
       </button>
     </form>
   </section>
   <div class="info">
-    <p>tags: {{post[2]}}</p>
-    <p>views: {{post[7]}}</p>
+    <p>👁️ {{post[7]}}</p>
   </div>
   <div class="info">
-    <p>creation time: {{post[6]}}</p>
-    <p>last edit time: {{post[9]}}</p>
+    <p>⌚ {{post[6]}}</p>
+    <p>last ⌚ {{post[9]}}</p>
   </div>
   <div class="info">
-    <p>creation date: {{post[5]}}</p>
-    <p>last edit date: {{post[8]}}</p>
+    <p>📍 {{post[5]}}</p>
+    <p>last 📍 {{post[8]}}</p>
   </div>
   {% if request.path == "/admin/posts" %}
   <p>
-    author:
+    👤
     <a href="/user/{{post[4].lower()}}" class="textPrimary">{{post[4]}}</a>
   </p>
   {% endif %}
@@ -61,10 +60,10 @@
 <div class="post centeredHorizontally">
   <div class="content" tag="content">{{comment[2]}}</div>
   <section class="comment">
-    <p class="commentCreationDate">Creation Date: {{comment[4]}}</p>
-    <p class="commentCreationTime">Creation Time: {{comment[5]}}</p>
+    <p class="commentCreationDate">📍 {{comment[4]}}</p>
+    <p class="commentCreationTime">⌚ {{comment[5]}}</p>
   </section>
-  <a href="/post/{{comment[1]}}" class="btn btnLink textPrimary">go to post</a>
+  <a href="/post/{{comment[1]}}" class="btn btnLink textPrimary">📃</a>
 </div>
 {% endfor %} {% endif %} {% if request.path == "/admin/posts" %}
 <a href="/admin" class="btn btnLink textPrimary" id="btnAdminPanel"

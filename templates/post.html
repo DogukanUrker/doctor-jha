@@ -15,9 +15,8 @@
           <img
             class="profilePicture"
             src="{{ getProfilePicture(author) }}"
-          />{{author}}
-        </h5></a
-      >
+          /></h5
+      ></a>
     </div>
     <div class="dateTime">
       <h5>{{time}}</h5>
@@ -33,11 +32,11 @@
         class="btn btnLink textPrimary"
         name="postDeleteButton"
       >
-        delete
+        💣
       </button>
     </form>
 
-    <a href="/editpost/{{id}}" class="btn btnLink textPrimary">edit</a>
+    <a href="/editpost/{{id}}" class="btn btnLink textPrimary">🎛️</a>
   </div>
   {% endif %} {% for comment in comments %}
   <div class="comments">
@@ -59,7 +58,7 @@
   <form method="post" class="commentForm">
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
     {% if session["userName"] %} {{form.comment(class_="comment")}}
-    <button type="submit" class="btnSubmit" id="btnComment">comment</button>
+    <button type="submit" class="btnSubmit" id="btnComment">🩺</button>
     {% else %}
     <style>
       .commentForm {

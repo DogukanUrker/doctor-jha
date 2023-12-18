@@ -6,6 +6,10 @@ section p {
   width: 50rem !important;
 }
 
+hr {
+  width: 50%;
+}
+
 .toPanel {
   font-size: 1.5rem;
   font-weight: bold;
@@ -23,7 +27,6 @@ section p {
 .userContainer {
   display: block;
   text-align: center;
-  border: 1px solid var(--primaryColor);
   border-radius: 0.5rem;
   width: fit-content;
   padding: 1rem;

@@ -40,7 +40,7 @@ hr {
 
 .stats {
   display: flex;
-  width: 22rem;
+  width: 25rem;
   justify-content: space-between;
 }
 

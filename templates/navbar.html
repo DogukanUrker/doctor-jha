@@ -47,9 +47,7 @@
       </div>
     </a>
     <a href="/logout" title="logout">🚪</a>
-    {% elif hideLogin %}
-    <a href="/signup"><button class="btn btnLink">sign up</button></a>{% elif
-    hideSignUp %}
+    {% elif hideLogin %} {% elif hideSignUp %}
     <a href="/login/redirect=&"><button class="btn btnLink">login</button></a>
     {%else%}
     <a href="/login/redirect=&"><button class="btn btnLink">login</button></a>
@@ -70,9 +68,7 @@
         </div>
       </a>
       <a href="/logout" title="logout">🚪</a>
-      {% elif hideLogin %}
-      <a href="/signup">sign up</a>
-      {% elif hideSignUp %}
+      {% elif hideLogin %} {% elif hideSignUp %}
       <a href="/login/redirect=&">login</a>
       {%else%}
       <a href="/login/redirect=&">login</a>

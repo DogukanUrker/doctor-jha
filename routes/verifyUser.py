@@ -47,10 +47,6 @@ def verifyUser(codeSent):
                                             "2",
                                             f'USER: "{userName}" HAS BEEN VERIFIED',
                                         )
-                                        flash(
-                                            "Your account has been verified.",
-                                            "success",
-                                        )
                                         return redirect("/blog")
                                     case False:
                                         flash("Wrong Code", "error")
@@ -75,7 +71,7 @@ def verifyUser(codeSent):
                                         client = Client(account_sid, auth_token)
                                         message = client.messages.create(
                                             to=number,
-                                            from_="+13603835415",
+                                            from_="+12058805093",
                                             body=f"Your verifiaction code is: {verificationCode}",
                                         )
                                         messageDebugging(

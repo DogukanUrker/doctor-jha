@@ -31,6 +31,10 @@ from flask import (
     send_from_directory,
 )
 
+import phonenumbers
+from phonenumbers import carrier
+from phonenumbers.phonenumberutil import number_type
+
 
 def currentDate():
     return datetime.now().strftime("%d.%m.%y")
@@ -63,6 +67,14 @@ def addPoints(points, user):
     )
     connection.commit()
     message("2", f'{points} POINTS ADDED TO "{user}"')
+
+
+def validateNumber(number):
+    try:
+        carrier._is_mobile(number_type(phonenumbers.parse(number)))
+        return True
+    except:
+        return False
 
 
 def getProfilePicture(userName):

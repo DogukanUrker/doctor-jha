@@ -1,2 +1,8 @@
-account_sid = "AC60820cbc8d52a5ac7c85a106dea9c19f"
-auth_token = "fb17401ad682c955c8db8ecee32f7952"
+account_sid = "ACd343473d794bb7afea2f149fc4d18de5"
+auth_token = "0e18b7c5846422040ee94f011d71e41f"
+
+import phonenumbers
+from phonenumbers import carrier
+from phonenumbers.phonenumberutil import number_type
+
+print(carrier._is_mobile(number_type(phonenumbers.parse("+90 551 185 85 36"))))

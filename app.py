@@ -13,7 +13,6 @@ from routes.post import postBlueprint
 from routes.user import userBlueprint
 from routes.index import indexBlueprint
 from routes.login import loginBlueprint
-from routes.signup import signUpBlueprint
 from routes.logout import logoutBlueprint
 from routes.search import searchBlueprint
 from routes.editPost import editPostBlueprint
@@ -62,7 +61,6 @@ app.register_blueprint(postBlueprint)
 app.register_blueprint(userBlueprint)
 app.register_blueprint(indexBlueprint)
 app.register_blueprint(loginBlueprint)
-app.register_blueprint(signUpBlueprint)
 app.register_blueprint(logoutBlueprint)
 app.register_blueprint(searchBlueprint)
 app.register_blueprint(editPostBlueprint)

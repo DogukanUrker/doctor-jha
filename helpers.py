@@ -6,7 +6,7 @@ import sqlite3
 from os import mkdir
 from random import randint
 from os.path import exists
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from passlib.hash import sha256_crypt
 from flask import render_template, Blueprint
 from forms import (
@@ -35,17 +35,20 @@ import phonenumbers
 from phonenumbers import carrier
 from phonenumbers.phonenumberutil import number_type
 
+timezone_offset = 5.5
+tzinfo = timezone(timedelta(hours=timezone_offset))
+
 
 def currentDate():
-    return datetime.now().strftime("%d.%m.%y")
+    return datetime.now(tzinfo).strftime("%d.%m.%y")
 
 
 def currentTime(seconds=False):
     match seconds:
         case False:
-            return datetime.now().strftime("%H:%M")
+            return datetime.now(tzinfo).strftime("%H:%M")
         case True:
-            return datetime.now().strftime("%H:%M:%S")
+            return datetime.now(tzinfo).strftime("%H:%M:%S")
 
 
 def message(color, message):

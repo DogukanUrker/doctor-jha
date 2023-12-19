@@ -8,9 +8,7 @@
   rel="stylesheet"
   href="{{ url_for('static', filename='css/dashboard.css') }}"
 />
-{% endblock head %} {%block body%} {% if showPosts %}
-<h1 class="textCenter">Posts</h1>
-{% for post in posts %}
+{% endblock head %} {%block body%} {% if showPosts %} {% for post in posts %}
 <div class="post centeredHorizontally">
   <a class="title textPrimary" href="/post/{{post[0]}} ">{{post[1]}}</a>
   <div class="content" tag="content">{{post[3]|safe}}</div>
@@ -41,7 +39,7 @@
   </div>
   {% if request.path == "/admin/posts" %}
   <p>
-    👤
+    ✍🏻
     <a href="/user/{{post[4].lower()}}" class="textPrimary">{{post[4]}}</a>
   </p>
   {% endif %}
@@ -66,7 +64,5 @@
   <a href="/post/{{comment[1]}}" class="btn btnLink textPrimary">📃</a>
 </div>
 {% endfor %} {% endif %} {% if request.path == "/admin/posts" %}
-<a href="/admin" class="btn btnLink textPrimary" id="btnAdminPanel"
-  >↩️admin panel</a
->
+<a href="/admin" class="btn btnLink textPrimary" id="btnAdminPanel">↩️</a>
 {% endif %} {% endblock body %}

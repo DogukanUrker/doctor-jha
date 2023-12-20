@@ -6,16 +6,20 @@
 {% endblock head %} {%block body%}
 <div class="toPanelsContainer">
   <h2>
-    <a href="/changeusername" class="toPanel textPrimary">name</a>
-  </h2>
-  <h2>
-    <a href="/changeprofilepicture" class="toPanel textPrimary">picture</a>
+    <a href="/changeprofilepicture" class="toPanel textPrimary"
+      ><img src="{{ getProfilePicture(session['userName']) }}"
+    /></a>
   </h2>
   <h2>
     <form method="post">
       <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
-      <button type="submit" name="userDeleteButton" class="toPanel textPrimary">
-        delete
+      <button
+        type="submit"
+        name="userDeleteButton"
+        class="toPanel textPrimary"
+        style="font-size: 2rem !important;"
+      >
+        💣
       </button>
     </form>
   </h2>

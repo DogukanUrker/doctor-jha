@@ -103,7 +103,7 @@
   }
 
   .hamburger {
-    display: inline-block;
+    display: flex;
   }
 
   .searchBarPage {

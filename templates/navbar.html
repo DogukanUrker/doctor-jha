@@ -54,29 +54,26 @@
     {% endif %}
   </div>
   <div class="hamburger">
-    <button onclick="hamburger()" class="hamburgerBtn">🍔</button>
-    <div id="hamburgerDropdown" class="hamburgerContent">
-      {% if session["userName"] %}
-      <a href="/user/{{session['userName'].lower()}}">
-        <img
-          class="profilePicture"
-          src="{{ getProfilePicture(session['userName']) }}"
-        />
-      </a>
-      <a href="/logout" title="logout">🚪</a>
-      <a href="/createpost">✏️</a>
-      {% elif hideLogin %}<style>
-        .searchBar {
-          display: none;
-        }
-      </style>
-      {% elif hideSignUp %}
-      <a href="/login/redirect=&">🚪</a>
-      {%else%}
-      <a href="/login/redirect=&">🚪</a>
-      {% endif %}
-      <a href="/searchbar">🔍</a>
-    </div>
+    {% if session["userName"] %}
+    <a href="/user/{{session['userName'].lower()}}">
+      <img
+        class="profilePicture"
+        src="{{ getProfilePicture(session['userName']) }}"
+      />
+    </a>
+    <a href="/logout" title="logout">🚪</a>
+    <a href="/createpost">✏️</a>
+    {% elif hideLogin %}<style>
+      .searchBar {
+        display: none;
+      }
+    </style>
+    {% elif hideSignUp %}
+    <a href="/login/redirect=&">🚪</a>
+    {%else%}
+    <a href="/login/redirect=&">🚪</a>
+    {% endif %}
+    <a href="/searchbar">🔍</a>
   </div>
   {% endif %}
   <script src="/static/js/navbar.js"></script>

@@ -28,7 +28,7 @@ def adminPanelUsers():
                     if request.form["userName"] != "admin":
                         deleteUser(request.form["userName"])
                     else:
-                        flash("ADMIN CANT DELETE HIMSELF", "error")
+                        flash("admin is bomb proof", "error")
             match role == "admin":
                 case True:
                     connection = sqlite3.connect("db/users.db")

@@ -67,6 +67,7 @@ button {
   border-bottom: 1px solid var(--themePrimary);
   transition: 0.4s;
   border-radius: 0.1rem;
+  text-decoration: none;
 }
 
 .centeredHorizontally {

@@ -64,7 +64,7 @@
     <a href="/logout" title="logout">🚪</a>
     <a href="/createpost">✏️</a>
     {% elif hideLogin %}<style>
-      .searchBar {
+      .searchBarMobile {
         display: none;
       }
     </style>
@@ -73,7 +73,7 @@
     {%else%}
     <a href="/login/redirect=&">🚪</a>
     {% endif %}
-    <a href="/searchbar">🔍</a>
+    <a href="/searchbar" class="searchBarMobile">🔍</a>
   </div>
   {% endif %}
   <script src="/static/js/navbar.js"></script>

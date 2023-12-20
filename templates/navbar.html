@@ -58,16 +58,19 @@
     <div id="hamburgerDropdown" class="hamburgerContent">
       {% if session["userName"] %}
       <a href="/user/{{session['userName'].lower()}}">
-        <div class="user">
-          <img
-            class="profilePicture"
-            src="{{ getProfilePicture(session['userName']) }}"
-          />
-          {{session["userName"]}}
-        </div>
+        <img
+          class="profilePicture"
+          src="{{ getProfilePicture(session['userName']) }}"
+        />
       </a>
       <a href="/logout" title="logout">🚪</a>
-      {% elif hideLogin %} {% elif hideSignUp %}
+      <a href="/createpost">✏️</a>
+      {% elif hideLogin %}<style>
+        .searchBar {
+          display: none;
+        }
+      </style>
+      {% elif hideSignUp %}
       <a href="/login/redirect=&">login</a>
       {%else%}
       <a href="/login/redirect=&">login</a>

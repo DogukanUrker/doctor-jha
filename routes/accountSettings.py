@@ -4,6 +4,7 @@ from helpers import (
     render_template,
     Blueprint,
     request,
+    flash,
     sqlite3,
 )
 from delete import deleteUser
@@ -23,7 +24,10 @@ def accountSettings():
             user = cursor.fetchall()
             if request.method == "POST":
                 if "userDeleteButton" in request.form:
-                    deleteUser(user[0][0])
+                    if session["userName"] != "admin":
+                        deleteUser(user[0][0])
+                    else:
+                        flash("admin is bomb proof", "error")
                     return redirect("/blog")
             return render_template("accountSettings.html", user=user)
         case False:

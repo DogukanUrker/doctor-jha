@@ -5,6 +5,7 @@ from helpers import (
     session,
     redirect,
     request,
+    flash,
 )
 from delete import deleteUser
 
@@ -24,7 +25,10 @@ def adminPanelUsers():
             role = cursor.fetchone()[0]
             if request.method == "POST":
                 if "userDeleteButton" in request.form:
-                    deleteUser(request.form["userName"])
+                    if request.form["userName"] != "admin":
+                        deleteUser(request.form["userName"])
+                    else:
+                        flash("ADMIN CANT DELETE HIMSELF", "error")
             match role == "admin":
                 case True:
                     connection = sqlite3.connect("db/users.db")

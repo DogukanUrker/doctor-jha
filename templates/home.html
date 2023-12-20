@@ -37,45 +37,7 @@
                     <br>
                     <hr class="border-green-700"><br>
             </div>
-            <div class="max-w-md mx-auto my-10 p-5 rounded-md shadow-sm">
-                <div class="text-center">
-                    <h1 class="my-3 text-3xl font-semibold text-gray-100">
-                        Message
-                    </h1>
-                </div>
-                <div>
-                    <form action="https://api.web3forms.com/submit" method="POST" id="form">
-                        <input type="hidden" name="access_key" value="97440970-b5a0-47e4-81e1-d313a32aa751" />
-                        <input type="hidden" name="subject" value="New Submission from Web3Forms" />
-                        <input type="checkbox" name="botcheck" id="" style="display: none;" />
-
-                        <div class="mb-6">
-                            <input type="text" name="name" id="name" placeholder="name" required
-                                class="w-full px-3 py-2 h-12 rounded-sm placeholder-gray-500 text-gray-900 bg-gray-100 text-sm focus:outline-none" />
-                        </div>
-                        <div class="mb-6">
-                            <input type="text" name="phone" id="phone" placeholder="number" required
-                                class="w-full px-3 py-2 h-12 rounded-sm placeholder-gray-500 text-gray-900 bg-gray-100 text-sm focus:outline-none" />
-                        </div>
-                        <div class="mb-6">
-                            <textarea rows="5" name="message" id="message" placeholder="message"
-                                class="w-full px-3 py-2 rounded-sm placeholder-gray-500 text-gray-900 bg-gray-100 text-sm focus:outline-none"
-                                required></textarea>
-                        </div>
-                        <div class="mb-6">
-                            <button type="submit"
-                                class="w-full inline-block text-white no-underline hover:text-green-100 py-4 px-4 rounded-sm focus:outline-none">
-                                <h1 class="my-3 text-3xl">
-                                    Send
-                                </h1>
-                            </button>
-                        </div>
-                        <p class="text-base text-center text-green-500" id="result"></p>
-                    </form>
-                </div>
-            </div>
             <br>
-            <hr class="border-green-700"><br>
             <div class="text-center">
                 <h1 class="my-3 text-3xl font-semibold text-gray-100">
                     Contact
@@ -119,6 +81,48 @@
                                 z-index: 2
                             }
                         </style>
+                    </div>
+                    
+                </div>
+                <br>
+                <br>
+                <hr class="border-green-700">
+                <div class="max-w-md mx-auto my-10 p-5 rounded-md shadow-sm">
+                    
+                    <div class="text-center">
+                        <h1 class="my-3 text-3xl font-semibold text-gray-100">
+                            Message
+                        </h1>
+                    </div>
+                    <div>
+                        <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                            <input type="hidden" name="access_key" value="97440970-b5a0-47e4-81e1-d313a32aa751" />
+                            <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+                            <input type="checkbox" name="botcheck" id="" style="display: none;" />
+    
+                            <div class="mb-6">
+                                <input type="text" name="name" id="name" placeholder="name" required
+                                    class="w-full px-3 py-2 h-12 rounded-sm placeholder-gray-500 text-gray-900 bg-gray-100 text-sm focus:outline-none" />
+                            </div>
+                            <div class="mb-6">
+                                <input type="text" name="phone" id="phone" placeholder="number" required
+                                    class="w-full px-3 py-2 h-12 rounded-sm placeholder-gray-500 text-gray-900 bg-gray-100 text-sm focus:outline-none" />
+                            </div>
+                            <div class="mb-6">
+                                <textarea rows="5" name="message" id="message" placeholder="message"
+                                    class="w-full px-3 py-2 rounded-sm placeholder-gray-500 text-gray-900 bg-gray-100 text-sm focus:outline-none"
+                                    required></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <button type="submit"
+                                    class="w-full inline-block text-white no-underline hover:text-green-100 py-4 px-4 rounded-sm focus:outline-none">
+                                    <h1 class="my-3 text-3xl">
+                                        Send
+                                    </h1>
+                                </button>
+                            </div>
+                            <p class="text-base text-center text-green-500" id="result"></p>
+                        </form>
                     </div>
                 </div>
                 <br><div class="blogContainer mt-2"><hr class="border-green-700"> <br><a href="/blog"

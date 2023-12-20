@@ -90,7 +90,8 @@
 
 @media screen and (max-width: 1068px) {
   .navbar {
-    width: 30%;
+    margin: 0 auto 0 auto;
+    width: 80%;
   }
   .btnHome {
     margin: 0 1rem 0 0;
@@ -102,7 +103,7 @@
   }
 
   .hamburger {
-    display: none;
+    display: inline-block;
   }
 
   .searchBarPage {

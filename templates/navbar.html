@@ -43,7 +43,7 @@
       <div class="btn btnPrimary user">
         <img
           class="profilePicture"
-          src="{{ getProfilePicture(session['userName']) }}"
+          src="{{ getProfilePicture(session['userName'].lower()) }}"
         />
       </div>
     </a>

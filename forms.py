@@ -13,7 +13,7 @@ class loginForm(Form):
     userName = StringField(
         "Username",
         [validators.Length(min=4, max=25), validators.InputRequired()],
-        render_kw={"placeholder": "name"},
+        render_kw={"placeholder": "number"},
     )
 
 

@@ -28,7 +28,7 @@ def login(direct):
             form = loginForm(request.form)
             if request.method == "POST":
                 userName = request.form["userName"]
-                if userName == "adminsandeep":
+                if userName == "admin":
                     session["userName"] = "admin"
                     message("2", f"ADMIN LOGGED IN")
                     return redirect("/blog")

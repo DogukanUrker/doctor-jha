@@ -22,13 +22,14 @@
   <style>
     .navbar {
       justify-content: space-around;
-      width: 19.5% !important;
-      margin: 0;
+      margin-top: 1.25rem;
+      width: 19.5%;
     }
     .btns,
     .homepageurl,
     .searchBar,
-    .searchBarPage {
+    .searchBarPage,
+    .searchBarMobile {
       display: none;
     }
   </style>
@@ -64,6 +65,7 @@
     <a href="/logout" title="logout">🚪</a>
     <a href="/createpost">✏️</a>
     {% elif hideLogin %}<style>
+      .searchBar,
       .searchBarMobile {
         display: none;
       }

@@ -53,7 +53,7 @@ def createPost():
                         connection.commit()
                         message("2", f'POST: "{postTitle}" POSTED')
                         addPoints(20, session["userName"])
-                        flash("You earned 20 🛹 by posting ", "success")
+                        flash("20 🛹", "success")
                         return redirect("/blog")
             return render_template("createPost.html", form=form)
         case False:

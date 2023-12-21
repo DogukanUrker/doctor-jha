@@ -5,6 +5,13 @@
 />
 {% endblock head %} {%block body%}
 <div class="errorMessage">
-  <h1 style="font-size: 4rem !important;">🔄</h1>
+  <button
+    type="button"
+    onClick="window.location.assign('/login/redirect=&');"
+    id="btn"
+    style="font-size: 4rem !important;"
+  >
+    🔄
+  </button>
 </div>
 {% endblock body %}

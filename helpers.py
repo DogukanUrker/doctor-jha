@@ -81,8 +81,6 @@ def validateNumber(number):
 
 
 def getProfilePicture(userName):
-    if session["userName"] == "admin":
-        return "https://api.dicebear.com/7.x/identicon/svg?seed=asdasdasd&radius=10"
     connection = sqlite3.connect("db/users.db")
     cursor = connection.cursor()
     cursor.execute(

@@ -4,7 +4,7 @@
 
 .note-editable {
   color: black !important;
-  background-color: white;
+  background-color: #2f855a;
   text-align: left !important;
 }
 
@@ -14,4 +14,19 @@
 
 .note-modal-content * {
   color: black !important;
+}
+
+.note-toolbar {
+  background-color: #2f855a;
+  border: 0;
+}
+
+.note-btn {
+  background-color: #2f855a;
+  border: 0;
+  color: white;
+}
+.note-editor.note-airframe,
+.note-editor.note-frame {
+  border-color: #2f855a;
 }

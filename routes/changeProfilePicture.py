@@ -31,7 +31,6 @@ def changeProfilePicture():
                     "2",
                     f'USER: "{session["userName"]}" CHANGED HIS PROFILE PICTURE TO "{newProfilePicture}"',
                 )
-                flash("profile picture changed", "success")
                 return redirect(f"/changeprofilepicture")
             return render_template("changeProfilePicture.html", form=form)
         case False:

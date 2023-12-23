@@ -31,29 +31,30 @@
   </div>
   <div class="info">
     <p>⌚ {{post[6]}}</p>
-    <p>last ⌚ {{post[9]}}</p>
+    <p>🚲 {{post[9]}}</p>
   </div>
   <div class="info">
     <p>📍 {{post[5]}}</p>
-    <p>last 📍 {{post[8]}}</p>
+    <p>🛴 {{post[8]}}</p>
   </div>
   {% if request.path == "/admin/posts" %}
   <p>
-    ✍🏻
-    <a href="/user/{{post[4].lower()}}" class="textPrimary">{{post[4]}}</a>
+    <a href="/user/{{post[4].lower()}}" class="textPrimary">
+      <img class="profilePicture" src="{{ getProfilePicture(post[4]) }}"
+    /></a>
   </p>
   {% endif %}
 </div>
+<hr />
 {% endfor %} {% elif not showPosts %} {% if request.path == "/admin/posts" %}
 <h1>This user haven't posted yet.</h1>
 {% else %}
 <p class="userDashboardNoPost">
-  no post yet,
-  <a href="/createpost" class="textPrimary">create one</a> ?
+  <a href="/createpost" class="textPrimary">✏️</a>
 </p>
 {% endif %} {% endif %} {% if showComments and not request.path ==
 "/admin/posts"%}
-<h1 class="textCenter">Comments</h1>
+<h1 class="textCenter">🩺</h1>
 {% for comment in comments %}
 <div class="post centeredHorizontally">
   <div class="content" tag="content">{{comment[2]}}</div>

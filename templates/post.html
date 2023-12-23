@@ -19,8 +19,8 @@
       ></a>
     </div>
     <div class="dateTime">
-      <h5>{{time}}</h5>
-      <h5 class="date">{{date}}</h5>
+      <h5>⌚ {{time}}</h5>
+      <h5 class="date">📍 {{date}}</h5>
     </div>
   </div>
   {% if author == session["userName"] %}
@@ -43,11 +43,6 @@
   <hr />
   <div class="comments">
     <img class="profilePicture" src="{{ getProfilePicture(comment[3]) }}" />
-    <section class="commentUserNameContainer">
-      <a href="/user/{{comment[3]|lower}}" class="commentUserName"
-        >{{comment[3]}} :</a
-      >
-    </section>
     <p class="centeredHorizontally">{{comment[2]}}</p>
     {% if session["userName"] == comment[3] %}
     <form method="post">

@@ -4,8 +4,8 @@ from wtforms import validators, Form, StringField, PasswordField, TextAreaField
 class commentForm(Form):
     comment = TextAreaField(
         "Comment",
-        [validators.Length(min=20, max=500), validators.InputRequired()],
-        render_kw={"placeholder": "comment"},
+        [validators.Length(min=1, max=500), validators.InputRequired()],
+        render_kw={"placeholder": ""},
     )
 
 

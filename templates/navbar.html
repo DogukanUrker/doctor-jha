@@ -44,9 +44,17 @@
   </style>
   {% else %}
   <div class="btns">
-    {% if session["userName"] %}
-    <a href="/createpost">
-      <button class="btn btnLink"><span class="emoji">✏️</span></button>
+    {% if session["userName"] %} {% if isDashboard %}
+    <style>
+      #navbarCreatePostButton {
+        display: none;
+      }
+    </style>
+    {% endif %}
+    <a href="/createpost" id="navbarCreatePostButton">
+      <button class="btn btnLink">
+        <span class="emoji" id="createPostButton">✏️</span>
+      </button>
     </a>
     <a href="/user/{{session['userName'].lower()}}">
       <div class="btn btnPrimary user">

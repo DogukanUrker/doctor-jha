@@ -56,7 +56,9 @@ def dashboard(userName):
                         "1",
                         f'THIS IS DASHBOARD NOT BELONGS TO USER: "{session["userName"]}"',
                     )
-                    return redirect(f'/dashboard/{session["userName"].lower()}')
+                    return redirect(
+                        f'/dashboard/{session["userName"].lower()}', isDashboard=True
+                    )
         case False:
             message("1", "DASHBOARD CANNOT BE ACCESSED WITHOUT USER LOGIN")
             flash("you need login for reach to dashboard", "error")

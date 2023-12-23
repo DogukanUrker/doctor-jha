@@ -49,6 +49,7 @@ button {
   border: 0;
 }
 .emoji {
+  user-select: none;
   font-size: 1.75rem !important;
 }
 .form {

@@ -10,7 +10,7 @@
 {% endblock head %} {%block body%} {% for comment in comments %}
 <div class="post centeredHorizontally">
   <h3>
-    🆔
+    <span class="emoji">🆔</span>
     <a class="title textPrimary" href="/post/{{comment[0]}} ">{{comment[1]}}</a>
   </h3>
   <div class="content" tag="content">{{comment[2]}}</div>
@@ -23,17 +23,17 @@
         name="commentDeleteButton"
         class="btn btnLink textPrimary"
       >
-        💣
+        <span class="emoji">💣</span>
       </button>
     </form>
   </section>
   <div class="info">
-    <p>📍 {{comment[5]}}</p>
-    <p>⌚ {{comment[4]}}</p>
+    <p><span class="emoji">📍</span> {{comment[5]}}</p>
+    <p><span class="emoji">⌚</span> {{comment[4]}}</p>
   </div>
   {% if request.path == "/admin/comments" %}
   <p>
-    🪪
+    <span class="emoji">🪪</span>
     <a href="/user/{{comment[3].lower()}}" class="textPrimary"
       >{{comment[3]}}</a
     >
@@ -45,6 +45,6 @@
   href="/admin"
   class="btn btnLink textPrimary goBackToAdmin"
   id="btnAdminPanel"
-  >↩️</a
+  ><span class="emoji">↩️</span></a
 >
 {% endif %} {% endblock body %}

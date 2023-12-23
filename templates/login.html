@@ -8,7 +8,9 @@
   <form method="post" class="form">
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
     {{form.userName(class_="input",autocomplete="off")}}
-    <button type="submit" class="btn btnPrimary">🚪</button>
+    <button type="submit" class="btn btnPrimary">
+      <span class="emoji">🚪</span>
+    </button>
   </form>
 </div>
 {% endblock body %}

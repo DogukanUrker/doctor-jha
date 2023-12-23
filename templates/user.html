@@ -14,23 +14,31 @@
       <img src="{{user[4]}}" alt="{{user[1]}}" class="userProfilePicture" />
     </section>
     <section class="stats">
-      <p class="userRole">🪑 {{user[5]}}</p>
-      <p class="userViews">👁️ {{views}}</p>
+      <p class="userRole"><span class="emoji">🪑</span> {{user[5]}}</p>
+      <p class="userViews"><span class="emoji">👁️</span> {{views}}</p>
     </section>
     <section class="stats">
-      <p class="userCreationDate">📍 {{user[7]}}</p>
-      <p class="userPoint">🛹 {{user[6]}}</p>
+      <p class="userCreationDate"><span class="emoji">📍</span> {{user[7]}}</p>
+      <p class="userPoint"><span class="emoji">🛹</span> {{user[6]}}</p>
     </section>
     <section class="stats">
       {% if session["userName"] == user[1] %}
-      <a href="/accountsettings" class="btn btnLink textPrimary">⚙️</a>
-      <a href="/dashboard/{{user[1]}}" class="btn btnLink textPrimary">📋</a>
+      <a href="/accountsettings" class="btn btnLink textPrimary"
+        ><span class="emoji">⚙️</span></a
+      >
+      <a href="/dashboard/{{user[1]}}" class="btn btnLink textPrimary"
+        ><span class="emoji">📋</span></a
+      >
       {% endif %} {% if user[5] == "admin" and session["userName"] == user[1] %}
-      <a href="/admin" class="btn btnLink textPrimary">👑</a>
+      <a href="/admin" class="btn btnLink textPrimary"
+        ><span class="emoji">👑</span></a
+      >
       {% endif %}
     </section>
     {% if "userName" in session and session['userName'] == "{{user[1]}}"%}
-    <a href="/dashboard/{{session['userName']}}">📋</a>
+    <a href="/dashboard/{{session['userName']}}"
+      ><span class="emoji">📋</span></a
+    >
     {% endif %}
   </div>
   <hr style="width: 22.5rem;" />
@@ -38,19 +46,29 @@
   <div class="post centeredHorizontally">
     <a class="title textPrimary" href="/post/{{post[0]}}">{{post[1]}}</a>
     <div class="content" tag="content">{{post[3]|safe}}</div>
-    <a href="/post/{{post[0]}}" class="btn btnLink">🧾</a>
+    <a href="/post/{{post[0]}}" class="btn btnLink"
+      ><span class="emoji">🧾</span></a
+    >
   </div>
   <hr style="width: 22.5rem;" />
   {% endfor %} {% endif %} {% if showComments %}
-  <h1 class="commentsText">🩺</h1>
+  <h1 class="commentsText" style="text-align: center;">
+    <span class="emoji">🩺</span>
+  </h1>
   {% for comment in comments %}
   <div class="post centeredHorizontally">
     <div class="content" tag="content">{{comment[2]}}</div>
     <section class="comment">
-      <p class="commentCreationDate">📍 {{comment[4]}}</p>
-      <p class="commentCreationTime">⌚ {{comment[5]}}</p>
+      <p class="commentCreationDate">
+        <span class="emoji">📍</span> {{comment[4]}}
+      </p>
+      <p class="commentCreationTime">
+        <span class="emoji">⌚</span> {{comment[5]}}
+      </p>
     </section>
-    <a href="/post/{{comment[1]}}" class="btn btnLink textPrimary">🧾</a>
+    <a href="/post/{{comment[1]}}" class="btn btnLink textPrimary"
+      ><span class="emoji">🧾</span></a
+    >
   </div>
   {% endfor %} {% endif %}
 </div>

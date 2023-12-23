@@ -19,8 +19,8 @@
       ></a>
     </div>
     <div class="dateTime">
-      <h5>⌚ {{time}}</h5>
-      <h5 class="date">📍 {{date}}</h5>
+      <h5><span class="emoji">⌚</span> {{time}}</h5>
+      <h5 class="date"><span class="emoji">📍</span> {{date}}</h5>
     </div>
   </div>
   {% if author == session["userName"] %}
@@ -32,11 +32,13 @@
         class="btn btnLink textPrimary"
         name="postDeleteButton"
       >
-        💣
+        <span class="emoji">💣</span>
       </button>
     </form>
 
-    <a href="/editpost/{{id}}" class="btn btnLink textPrimary">🎛️</a>
+    <a href="/editpost/{{id}}" class="btn btnLink textPrimary"
+      ><span class="emoji">🎛️</span></a
+    >
   </div>
 
   {% endif %} {% for comment in comments %}
@@ -48,14 +50,18 @@
     <form method="post">
       <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
       <input type="hidden" name="commentID" value="{{comment[0]}}" />
-      <button type="submit" name="commentDeleteButton">🗑️</button>
+      <button type="submit" name="commentDeleteButton">
+        <span class="emoji">🗑️</span>
+      </button>
     </form>
     {% endif %} {% endfor %}
   </div>
   <form method="post" class="commentForm">
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
     {% if session["userName"] %} {{form.comment(class_="comment")}}
-    <button type="submit" class="btnSubmit" id="btnComment">🩺</button>
+    <button type="submit" class="btnSubmit" id="btnComment">
+      <span class="emoji">🩺</span>
+    </button>
     {% else %}
     <style>
       .commentForm {
@@ -63,7 +69,9 @@
       }
     </style>
     <small>
-      <a href="/login/redirect=&post&{{id}}" class="linkLogin">🚪</a>
+      <a href="/login/redirect=&post&{{id}}" class="linkLogin"
+        ><span class="emoji">🚪</span></a
+      >
     </small>
     {% endif %}
   </form>

@@ -9,23 +9,23 @@
   {% for user in users %}
   <div class="userContainer">
     <section class="stats">
-      <p>🆔 {{user[0]}}</p>
-      <p>🪑 {{user[5]}}</p>
+      <p><span class="emoji">🆔</span> {{user[0]}}</p>
+      <p><span class="emoji">🪑</span> {{user[5]}}</p>
     </section>
     <section class="stats">
       <p>
-        🔭
+        <span class="emoji">🔭</span>
         <a href="/user/{{user[1].lower()}}" class="textPrimary">{{user[1]}}</a>
       </p>
       <img src="{{user[4]}}" alt="{{user[1]}}" class="picture" />
     </section>
     <section class="stats">
-      <p>📱 {{user[2]}}</p>
-      <p>🛹 {{user[6]}}</p>
+      <p><span class="emoji">📱</span> {{user[2]}}</p>
+      <p><span class="emoji">🛹</span> {{user[6]}}</p>
     </section>
     <section class="stats">
-      <p>📍 {{user[7]}}</p>
-      <p>⌚ {{user[8]}}</p>
+      <p><span class="emoji">📍</span> {{user[7]}}</p>
+      <p><span class="emoji">⌚</span>⌚ {{user[8]}}</p>
     </section>
     <section class="stats">
       <form method="post">
@@ -36,7 +36,7 @@
           name="userDeleteButton"
           class="textPrimary deleteUserButton"
         >
-          💣
+          <span class="emoji">💣</span>
         </button>
       </form>
       {% if user[5] == "admin" %}
@@ -53,5 +53,7 @@
   <hr />
   {% endfor %}
 </div>
-<a href="/admin" class="btn btnLink textPrimary" id="btnAdminPanel">↩️</a>
+<a href="/admin" class="btn btnLink textPrimary" id="btnAdminPanel"
+  ><span class="emoji">↩️</span></a
+>
 {% endblock body %}

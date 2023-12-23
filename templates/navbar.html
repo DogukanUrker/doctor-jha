@@ -3,7 +3,9 @@
   href="{{ url_for('static', filename='css/navbar.css') }}"
 />
 <div class="navbar">
-  <a href="/" class="homepageurl"><p class="btn btnLink btnHome">🥭</p></a>
+  <a href="/" class="homepageurl"
+    ><p class="btn btnLink btnHome"><span class="emoji">🥭</span></p></a
+  >
   <div class="searchBar">
     <input
       type="text"
@@ -11,7 +13,9 @@
       class="input"
       autocomplete="off"
       placeholder=""
-    /><button onclick="search()" class="btn">🔍</button>
+    /><button onclick="search()" class="btn">
+      <span class="emoji">🔍</span>
+    </button>
   </div>
   {% if isHome %}
   <a href="/login/redirect=&"
@@ -37,7 +41,7 @@
   <div class="btns">
     {% if session["userName"] %}
     <a href="/createpost">
-      <button class="btn btnLink">✏️</button>
+      <button class="btn btnLink"><span class="emoji">✏️</span></button>
     </a>
     <a href="/user/{{session['userName'].lower()}}">
       <div class="btn btnPrimary user">
@@ -47,11 +51,15 @@
         />
       </div>
     </a>
-    <a href="/logout" title="logout">🚪</a>
+    <a href="/logout" title="logout"><span class="emoji">🚪</span></a>
     {% elif hideLogin %} {% elif hideSignUp %}
-    <a href="/login/redirect=&"><button class="btn btnLink">🚪</button></a>
+    <a href="/login/redirect=&"
+      ><button class="btn btnLink"><span class="emoji">🚪</span></button></a
+    >
     {%else%}
-    <a href="/login/redirect=&"><button class="btn btnLink">🚪</button></a>
+    <a href="/login/redirect=&"
+      ><button class="btn btnLink"><span class="emoji">🚪</span></button></a
+    >
     {% endif %}
   </div>
   <div class="hamburger">
@@ -62,8 +70,8 @@
         src="{{ getProfilePicture(session['userName']) }}"
       />
     </a>
-    <a href="/logout" title="logout">🚪</a>
-    <a href="/createpost">✏️</a>
+    <a href="/logout" title="logout"><span class="emoji">🚪</span></a>
+    <a href="/createpost"><span class="emoji">✏️</span></a>
     {% elif hideLogin %}<style>
       .searchBar,
       .searchBarMobile {
@@ -71,11 +79,13 @@
       }
     </style>
     {% elif hideSignUp %}
-    <a href="/login/redirect=&">🚪</a>
+    <a href="/login/redirect=&"><span class="emoji">🚪</span></a>
     {%else%}
-    <a href="/login/redirect=&">🚪</a>
+    <a href="/login/redirect=&"><span class="emoji">🚪</span></a>
     {% endif %}
-    <a href="/searchbar" class="searchBarMobile">🔍</a>
+    <a href="/searchbar" class="searchBarMobile"
+      ><span class="emoji">🔍</span></a
+    >
   </div>
   {% endif %}
   <script src="/static/js/navbar.js"></script>

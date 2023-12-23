@@ -29,8 +29,8 @@
 }
 
 .profilePicture {
-  height: 1rem;
-  width: 1rem;
+  height: 1.75rem;
+  width: 1.75rem;
   display: inline-block;
 }
 
@@ -89,6 +89,9 @@
 }
 
 @media screen and (max-width: 1068px) {
+  .profilePicture {
+    margin-top: 0.5rem;
+  }
   .navbar {
     width: 80%;
   }

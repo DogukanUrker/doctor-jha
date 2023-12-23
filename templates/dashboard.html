@@ -13,7 +13,9 @@
   <a class="title textPrimary" href="/post/{{post[0]}} ">{{post[1]}}</a>
   <div class="content" tag="content">{{post[3]|safe}}</div>
   <section>
-    <a href="/editpost/{{post[0]}}" class="btn btnLink textPrimary">🎛️</a>
+    <a href="/editpost/{{post[0]}}" class="btn btnLink textPrimary"
+      ><span class="emoji">🎛️</span></a
+    >
     <form method="post">
       <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
       <input type="hidden" name="postID" value="{{post[0]}}" />
@@ -22,20 +24,20 @@
         name="postDeleteButton"
         class="btn btnLink textPrimary"
       >
-        💣
+        <span class="emoji">💣</span>
       </button>
     </form>
   </section>
   <div class="info">
-    <p>👁️ {{post[7]}}</p>
+    <p><span class="emoji">👁️</span> {{post[7]}}</p>
   </div>
   <div class="info">
-    <p>⌚ {{post[6]}}</p>
-    <p>🚲 {{post[9]}}</p>
+    <p><span class="emoji">⌚</span> {{post[6]}}</p>
+    <p><span class="emoji">🚲</span> {{post[9]}}</p>
   </div>
   <div class="info">
-    <p>📍 {{post[5]}}</p>
-    <p>🛴 {{post[8]}}</p>
+    <p><span class="emoji">📍</span> {{post[5]}}</p>
+    <p><span class="emoji">🛴</span> {{post[8]}}</p>
   </div>
   {% if request.path == "/admin/posts" %}
   <p>
@@ -50,20 +52,28 @@
 <h1>This user haven't posted yet.</h1>
 {% else %}
 <p class="userDashboardNoPost">
-  <a href="/createpost" class="textPrimary">✏️</a>
+  <a href="/createpost" class="textPrimary"><span class="emoji">✏️</span></a>
 </p>
 {% endif %} {% endif %} {% if showComments and not request.path ==
 "/admin/posts"%}
-<h1 class="textCenter">🩺</h1>
+<h1 class="textCenter"><span class="emoji">🩺</span></h1>
 {% for comment in comments %}
 <div class="post centeredHorizontally">
   <div class="content" tag="content">{{comment[2]}}</div>
   <section class="comment">
-    <p class="commentCreationDate">📍 {{comment[4]}}</p>
-    <p class="commentCreationTime">⌚ {{comment[5]}}</p>
+    <p class="commentCreationDate">
+      <span class="emoji">📍</span> {{comment[4]}}
+    </p>
+    <p class="commentCreationTime">
+      <span class="emoji">⌚</span> {{comment[5]}}
+    </p>
   </section>
-  <a href="/post/{{comment[1]}}" class="btn btnLink textPrimary">📃</a>
+  <a href="/post/{{comment[1]}}" class="btn btnLink textPrimary"
+    ><span class="emoji">📃</span></a
+  >
 </div>
 {% endfor %} {% endif %} {% if request.path == "/admin/posts" %}
-<a href="/admin" class="btn btnLink textPrimary" id="btnAdminPanel">↩️</a>
+<a href="/admin" class="btn btnLink textPrimary" id="btnAdminPanel"
+  ><span class="emoji">↩️</span></a
+>
 {% endif %} {% endblock body %}

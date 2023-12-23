@@ -48,7 +48,9 @@ button {
   background-color: transparent;
   border: 0;
 }
-
+.emoji {
+  font-size: 1.75rem !important;
+}
 .form {
   height: fit-content;
   width: fit-content;

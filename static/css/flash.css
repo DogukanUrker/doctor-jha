@@ -6,11 +6,11 @@
 }
 
 .error {
-  background-color: #ed1c24;
+  background-color: transparent;
 }
 
 .success {
-  background-color: #00a550;
+  background-color: transparent;
 }
 
 .flashContainer {

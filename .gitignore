@@ -3,3 +3,7 @@
 __pycache__
 log.log
 *.db
+*.db
+db/comments.db
+db/posts.db
+db/users.db

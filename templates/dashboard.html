@@ -53,6 +53,11 @@
 {% else %}
 <p class="userDashboardNoPost">
   <a href="/createpost" class="textPrimary"><span class="emoji">✏️</span></a>
+  <style>
+    #createPostButton {
+      display: none;
+    }
+  </style>
 </p>
 {% endif %} {% endif %} {% if showComments and not request.path ==
 "/admin/posts"%}

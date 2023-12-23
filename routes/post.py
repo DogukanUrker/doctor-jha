@@ -57,7 +57,7 @@ def post(postID):
                     )
                     connection.commit()
                     addPoints(5, session["userName"])
-                    flash("You earned 5 🛹 by commenting ", "success")
+                    flash("5 🛹", "success")
                     return redirect(f"/post/{postID}")
             connection = sqlite3.connect("db/comments.db")
             cursor = connection.cursor()

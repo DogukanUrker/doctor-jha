@@ -19,15 +19,20 @@
   </div>
   {% if isHome %}
   <a href="/login/redirect=&"
-    ><p class="btn btnLink btnHome" style="font-size: 3rem !important;">
-      🥭
+    ><p class="btn btnLink btnHome">
+      <span class="emoji">🥭</span>
     </p></a
   >
   <style>
     .navbar {
       justify-content: space-around;
       margin-top: 1.25rem;
-      width: 19.5%;
+      width: 12.5%;
+    }
+    @media screen and (max-width: 1068px) {
+      .navbar {
+        margin-left: 3.5rem !important;
+      }
     }
     .btns,
     .homepageurl,

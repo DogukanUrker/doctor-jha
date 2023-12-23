@@ -9,8 +9,10 @@
   {% for user in users %}
   <div class="userContainer">
     <section class="stats">
-      <p><span class="emoji">🆔</span> {{user[0]}}</p>
+      <p><span class="emoji">🏆</span> {{user[0]}}</p>
+      {% if user[5] != "admin" %}
       <p><span class="emoji">🪑</span> {{user[5]}}</p>
+      {% endif %}
     </section>
     <section class="stats">
       <p>
@@ -25,7 +27,7 @@
     </section>
     <section class="stats">
       <p><span class="emoji">📍</span> {{user[7]}}</p>
-      <p><span class="emoji">⌚</span>⌚ {{user[8]}}</p>
+      <p><span class="emoji">🪚</span> {{user[8]}}</p>
     </section>
     <section class="stats">
       <form method="post">
@@ -39,11 +41,7 @@
           <span class="emoji">💣</span>
         </button>
       </form>
-      {% if user[5] == "admin" %}
-      <a href="/setuserrole/{{user[1].lower()}}/user" class="textPrimary"
-        >set role to user</a
-      >
-      {% else %}
+      {% if user[5] == "admin" %}{% else %}
       <a href="/setuserrole/{{user[1].lower()}}/admin" class="textPrimary"
         >set role to admin</a
       >

@@ -5,9 +5,19 @@
   --primaryColor: #fff;
   --primaryHelper: #f3f4f6;
 }
+
+::-moz-selection {
+  background: #669180;
+}
+
+::selection {
+  background: #669180;
+}
+
 hr {
   border-color: #2f855a !important;
 }
+
 * {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
@@ -48,10 +58,12 @@ button {
   background-color: transparent;
   border: 0;
 }
+
 .emoji {
   user-select: none;
   font-size: 1.75rem !important;
 }
+
 .form {
   height: fit-content;
   width: fit-content;

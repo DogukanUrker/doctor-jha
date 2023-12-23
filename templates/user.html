@@ -42,17 +42,15 @@
   </div>
   <hr style="width: 22.5rem;" />
   {% endfor %} {% endif %} {% if showComments %}
-  <h1 class="commentsText">Comments</h1>
+  <h1 class="commentsText">🩺</h1>
   {% for comment in comments %}
   <div class="post centeredHorizontally">
     <div class="content" tag="content">{{comment[2]}}</div>
     <section class="comment">
-      <p class="commentCreationDate">Creation Date: {{comment[4]}}</p>
-      <p class="commentCreationTime">Creation Time: {{comment[5]}}</p>
+      <p class="commentCreationDate">📍 {{comment[4]}}</p>
+      <p class="commentCreationTime">⌚ {{comment[5]}}</p>
     </section>
-    <a href="/post/{{comment[1]}}" class="btn btnLink textPrimary"
-      >go to post</a
-    >
+    <a href="/post/{{comment[1]}}" class="btn btnLink textPrimary">🧾</a>
   </div>
   {% endfor %} {% endif %}
 </div>

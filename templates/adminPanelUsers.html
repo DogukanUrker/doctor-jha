@@ -4,8 +4,8 @@
   href="{{ url_for('static', filename='css/adminPanel.css') }}"
 />
 {% endblock head %} {%block body%}
+<hr />
 <div class="usersContainer">
-  <h1 class="textCenter">Users</h1>
   {% for user in users %}
   <div class="userContainer">
     <section class="stats">

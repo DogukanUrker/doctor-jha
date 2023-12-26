@@ -110,7 +110,7 @@ class changeProfilePictureForm(Form):
     newProfilePictureSeed = StringField(
         "ProfilePictureSeed",
         [validators.InputRequired()],
-        render_kw={"placeholder": "text"},
+        render_kw={"placeholder": ""},
     )
 
 

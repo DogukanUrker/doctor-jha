@@ -3,11 +3,23 @@
   rel="stylesheet"
   href="{{ url_for('static', filename='css/index.css') }}"
 />
-{% endblock head %} {%block body%} {% for post in posts %}
+{% endblock head %} {%block body%} {% if anyPost == False %}
+<div
+  class="centeredHorizontally"
+  style="width: fit-content; margin: auto; margin-top: 16rem;"
+>
+  <a href="/createpost" class="textPrimary"><span class="emoji">✏️</span></a>
+  <style>
+    #createPostButton {
+      display: none;
+    }
+  </style>
+</div>
+{% endif %} {% for post in posts %}
+<hr />
 <div class="post centeredHorizontally">
   <a class="title textPrimary" href="post/{{post[0]}}">{{post[1]}}</a>
   <div class="content" tag="content">{{post[3]|safe}}</div>
   <a href="post/{{post[0]}}" class="btn btnLink">read more</a>
 </div>
-<hr />
 {% endfor %} {% endblock body %}

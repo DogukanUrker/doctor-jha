@@ -10,7 +10,8 @@
 >
   <a href="/createpost" class="textPrimary"><span class="emoji">✏️</span></a>
   <style>
-    #createPostButton {
+    #createPostButton,
+    #lineOutOfFor {
       display: none;
     }
   </style>
@@ -23,5 +24,5 @@
   <a href="post/{{post[0]}}" class="btn btnLink">🔬 </a>
 </div>
 {% endfor %}
-<hr />
+<hr id="lineOutOfFor" />
 {% endblock body %}

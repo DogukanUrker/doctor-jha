@@ -13,7 +13,7 @@ class loginForm(Form):
     userName = StringField(
         "Username",
         [validators.Length(min=4, max=25), validators.InputRequired()],
-        render_kw={"placeholder": "number"},
+        render_kw={"placeholder": ""},
     )
 
 
@@ -21,7 +21,7 @@ class createPostForm(Form):
     postTitle = StringField(
         "Post Title",
         [validators.Length(min=4, max=75), validators.InputRequired()],
-        render_kw={"placeholder": "title"},
+        render_kw={"placeholder": ""},
     )
     postContent = TextAreaField(
         "Post Content",

@@ -1,3 +1,4 @@
+/*
 var Tawk_API = Tawk_API || {},
   Tawk_LoadStart = new Date();
 (function() {
@@ -9,3 +10,4 @@ var Tawk_API = Tawk_API || {},
   s1.setAttribute("crossorigin", "*");
   s0.parentNode.insertBefore(s1, s0);
 })();
+*/

@@ -14,7 +14,11 @@ def index():
     cursor = connection.cursor()
     cursor.execute("select * from posts")
     posts = cursor.fetchall()
+    anyPost = True
+    if posts == []:
+        anyPost = False
     return render_template(
         "index.html",
         posts=posts,
+        anyPost=anyPost,
     )

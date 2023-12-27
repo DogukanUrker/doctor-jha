@@ -53,8 +53,8 @@
     </style>
     {% endif %}
     <a href="/createpost" id="navbarCreatePostButton">
-      <button class="btn btnLink">
-        <span class="emoji" id="createPostButton">✏️</span>
+      <button class="btn btnLink" id="createPostButton">
+        <span class="emoji">✏️</span>
       </button>
     </a>
     <a href="/user/{{session['userName'].lower()}}">
@@ -85,7 +85,9 @@
       />
     </a>
     <a href="/logout" title="logout"><span class="emoji">🚪</span></a>
-    <a href="/createpost"><span class="emoji">✏️</span></a>
+    <a href="/createpost" id="createPostButton"
+      ><span class="emoji">✏️</span></a
+    >
     {% elif hideLogin %}<style>
       .searchBar,
       .searchBarMobile {

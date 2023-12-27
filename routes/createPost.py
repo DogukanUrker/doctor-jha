@@ -58,5 +58,4 @@ def createPost():
             return render_template("createPost.html", form=form)
         case False:
             message("1", "USER NOT LOGGED IN")
-            flash("you need loin for create a post", "error")
-            return redirect("/login")
+            return redirect("/login/redirect=&")

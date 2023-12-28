@@ -35,7 +35,7 @@
 .comment {
   display: block;
   width: 27.5rem;
-  height: 8rem;
+  height: fit-content;
   background-color: transparent;
   border: none;
   resize: none;

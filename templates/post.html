@@ -42,7 +42,10 @@
   </div>
   {% endif %} {% for comment in comments %}
   <div class="comments">
-    <div class="comment">
+    <div
+      class="comment"
+      style="margin-left: auto !important; margin-right: auto !important;"
+    >
       <img class="profilePicture" src="{{ getProfilePicture(comment[3]) }}" />
       <p class="centeredHorizontally">{{comment[2]}}</p>
       {% if session["userName"] == comment[3] %}

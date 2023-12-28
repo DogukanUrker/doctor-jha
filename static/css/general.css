@@ -25,6 +25,7 @@ hr {
   color: var(--themePrimary);
   font-size: 1.25rem !important;
   font-weight: 400 !important;
+  overflow-wrap: break-word !important;
 }
 
 html {

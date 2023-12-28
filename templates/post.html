@@ -42,16 +42,18 @@
   </div>
   {% endif %} {% for comment in comments %}
   <div class="comments">
-    <img class="profilePicture" src="{{ getProfilePicture(comment[3]) }}" />
-    <p class="centeredHorizontally">{{comment[2]}}</p>
-    {% if session["userName"] == comment[3] %}
-    <form method="post">
-      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
-      <input type="hidden" name="commentID" value="{{comment[0]}}" />
-      <button type="submit" name="commentDeleteButton">
-        <span class="emoji">🗑️</span>
-      </button>
-    </form>
+    <div class="comment">
+      <img class="profilePicture" src="{{ getProfilePicture(comment[3]) }}" />
+      <p class="centeredHorizontally">{{comment[2]}}</p>
+      {% if session["userName"] == comment[3] %}
+      <form method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <input type="hidden" name="commentID" value="{{comment[0]}}" />
+        <button type="submit" name="commentDeleteButton">
+          <span class="emoji">🗑️</span>
+        </button>
+      </form>
+    </div>
     {% endif %}
     <!-- <hr style="width: 30rem;" /> -->
     {% endfor %}

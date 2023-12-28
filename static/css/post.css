@@ -34,7 +34,7 @@
 
 .comment {
   display: block;
-  width: 25rem;
+  width: 27.5rem;
   height: 8rem;
   background-color: transparent;
   border: none;
@@ -125,5 +125,9 @@ small {
 
   .navbar * {
     width: 100%;
+  }
+
+  .comment {
+    max-width: 90%;
   }
 }

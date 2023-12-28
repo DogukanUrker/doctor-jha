@@ -42,6 +42,7 @@
   </div>
   {% endif %} {% for comment in comments %}
   <div class="comments">
+    <br />
     <div class="comment">
       <img class="profilePicture" src="{{ getProfilePicture(comment[3]) }}" />
       <p class="centeredHorizontally">{{comment[2]}}</p>
@@ -54,6 +55,7 @@
         </button>
       </form>
     </div>
+    <br />
     {% endif %}
     <!-- <hr style="width: 30rem;" /> -->
     {% endfor %}
